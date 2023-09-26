@@ -26,6 +26,7 @@ public class UserResource {
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id){
         User obj = userServices.findById(id);
+        System.out.println(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).body(obj);
     }

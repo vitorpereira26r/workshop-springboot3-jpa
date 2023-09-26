@@ -90,4 +90,16 @@ public class User implements Serializable {
     public int hashCode() {
         return Objects.hash(getId());
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", orders=" + orders +
+                '}';
+    }
 }
