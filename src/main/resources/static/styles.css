@@ -1,0 +1,81 @@
+/* Define styles for the body of the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center align the content */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Vertically center content in viewport */
+  }
+  
+  /* Style the heading */
+  h1 {
+    color: #333;
+  }
+  
+  /* Style the paragraph */
+  p {
+    color: #666;
+  }
+  
+  /* Button container */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Button div */
+  .button-div {
+    margin: 10px 0;
+    width: 100%; /* Set width to 100% to make buttons the same size horizontally */
+  }
+  
+  /* Styled buttons */
+  .styled-button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px 20px; /* Adjust padding to center the text vertically */
+    width: 100%; /* Set width to 100% for equal sizing */
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 18px; /* Increase font size for readability */
+  }
+  
+  /* Button colors with white text */
+  .yellow-button {
+    background-color: #ffc107; /* Yellow */
+  }
+  
+  .blue-button {
+    background-color: #007bff; /* Blue */
+  }
+  
+  .red-button {
+    background-color: #dc3545; /* Red */
+  }
+  
+  .green-button {
+    background-color: #28a745; /* Green */
+  }
+  
+  /* Change button color on hover */
+  .styled-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Remove default button focus outline */
+  .styled-button:focus {
+    outline: none;
+  }
+  
