@@ -1,0 +1,44 @@
+/* Define styles for the body of the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center align the content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Vertically center content in viewport */
+}
+
+/* Style the heading */
+h1 {
+    color: #333;
+}
+
+/* Style the paragraph */
+p {
+    color: #666;
+}
+
+/* Styled button links */
+.styled-button {
+    margin: 10px 0; /* Add vertical spacing between buttons */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%; /* Make buttons full width */
+}
+
+/* Change button color on hover */
+.styled-button:hover {
+    background-color: #0056b3;
+}
