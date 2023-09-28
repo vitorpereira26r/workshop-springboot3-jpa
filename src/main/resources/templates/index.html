@@ -31,3 +31,37 @@
 </div>
 </body>
 </html>
+=======
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to My Spring Boot API</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div>
+    <div class="container">
+        <h1>Welcome to My Spring Boot API</h1>
+        <p>This is a simple welcome page for your Spring Boot API.</p>
+
+        <p>Created by Vítor Pereira Resende</p>
+        <p>This webapp simulates a workshop and was made using Java, Spring Boot framework, and PostgreSQL.</p>
+        <div class="button-container">
+            <div class="button-div">
+                <button class="styled-button yellow-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/users'">To view the Users API working</button>
+            </div>
+            <div class="button-div">
+                <button class="styled-button blue-button"onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/orders'">To view Orders API working</button>
+            </div>
+            <div class="button-div">
+                <button class="styled-button red-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/categories'">To view Categories API working</button>
+            </div>
+            <div class="button-div">
+                <button class="styled-button green-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/products'">To view Products API working</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
+>>>>>>> 7d8b4d7df4ca396fb89234706fe3911e2c9606ec
