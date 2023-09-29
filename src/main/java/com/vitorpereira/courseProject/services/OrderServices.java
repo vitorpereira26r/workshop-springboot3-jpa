@@ -47,7 +47,6 @@ public class OrderServices {
 
     public Order addOrder(Order order){
         order.setMoment(Instant.now());
-        order.setPayment(new Payment(null, Instant.now(), order));
         return repository.save(order);
     }
 
