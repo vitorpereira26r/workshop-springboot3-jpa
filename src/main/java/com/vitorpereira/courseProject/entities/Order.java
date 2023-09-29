@@ -40,6 +40,7 @@ public class Order implements Serializable {
         this.moment = moment;
         setOrderStatus(orderStatus);
         this.client = client;
+        //setPayment(new Payment(null, Instant.now(), this));
     }
 
     public Long getId() {
@@ -106,5 +107,17 @@ public class Order implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", moment=" + moment +
+                ", orderStatus=" + orderStatus +
+                ", client=" + client +
+                ", items=" + items +
+                ", payment=" + payment +
+                '}';
     }
 }
