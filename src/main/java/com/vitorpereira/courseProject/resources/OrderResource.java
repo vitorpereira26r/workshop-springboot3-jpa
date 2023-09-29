@@ -2,6 +2,7 @@ package com.vitorpereira.courseProject.resources;
 
 import com.vitorpereira.courseProject.entities.Order;
 import com.vitorpereira.courseProject.entities.dtos.OrderItemDto;
+import com.vitorpereira.courseProject.entities.dtos.OrderStatusDto;
 import com.vitorpereira.courseProject.services.OrderServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,18 @@ public class OrderResource {
     public ResponseEntity<Order> findById(@RequestBody Order order){
         Order entity = orderServices.addOrder(order);
         return ResponseEntity.ok(entity);
+    }
+
+    @PostMapping(value = "/pay/{id}")
+    public ResponseEntity<Order> pay(@PathVariable Long id){
+        Order order = orderServices.pay(id);
+        return ResponseEntity.ok(order);
+    }
+    
+    @PostMapping(value = "/change-order-status/{id}")
+    public ResponseEntity<Order> changeOrderStatus(@PathVariable Long id, @RequestBody OrderStatusDto dto){
+        Order order = orderServices.changeOrderStatus(id, dto);
+        return ResponseEntity.ok(order);
     }
 
     @DeleteMapping(value = "/{id}")

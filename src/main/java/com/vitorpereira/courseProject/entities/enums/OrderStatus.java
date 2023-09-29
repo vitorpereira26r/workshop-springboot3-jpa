@@ -26,4 +26,23 @@ public enum OrderStatus {
         }
         throw new IllegalArgumentException("Invalid Order Status code");
     }
+
+    public static OrderStatus valueOfString(String name){
+        if(name.equals("WAITING_PAYMENT")){
+            return OrderStatus.WAITING_PAYMENT;
+        }
+        else if(name.equals("PAID")){
+            return OrderStatus.PAID;
+        }
+        else if(name.equals("SHIPPED")){
+            return OrderStatus.SHIPPED;
+        }
+        else if(name.equals("DELIVERED")){
+            return OrderStatus.DELIVERED;
+        }
+        else if(name.equals("CANCELED")){
+            return OrderStatus.CANCELED;
+        }
+        return null;
+    }
 }
