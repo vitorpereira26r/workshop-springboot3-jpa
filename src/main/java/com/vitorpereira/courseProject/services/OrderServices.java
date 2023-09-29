@@ -47,6 +47,7 @@ public class OrderServices {
 
     public Order addOrder(Order order){
         order.setMoment(Instant.now());
+        order.setOrderStatus(OrderStatus.WAITING_PAYMENT);
         return repository.save(order);
     }
 
