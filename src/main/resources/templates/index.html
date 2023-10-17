@@ -1,33 +1,173 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome to My Spring Boot API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      margin-top: 70px;
+    }
+
+    .custom-heading {
+      margin-bottom: 5px;
+      color: #161617; /* Change this to your desired color */
+    }
+
+    .page-content {
+      max-width: 800px;
+    }
+
+    p {
+      margin-top: 10px;
+      margin-left: 150px;
+      margin-right: 150px;
+      margin-bottom: 5px;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-top: 7px;
+      margin-bottom: 15px;
+    }
+
+    .image-container img {
+      max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+      height: auto; /* Maintain the aspect ratio of the image */
+    }
+
+    .content-home-container-me {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .link-container-me {
+      margin-top: 15px;
+    }
+
+    /* Add this CSS to your existing CSS file or create a new one */
+    .button-link {
+      text-decoration: none; /* Remove the default underline for links */
+    }
+
+    /* Add responsive styles for smaller screens */
+    @media (max-width: 768px) {
+      .page-container {
+        margin-top: 20px; /* Adjust the top margin for smaller screens */
+      }
+
+      .page-content {
+        padding: 0 20px; /* Add horizontal padding for smaller screens */
+      }
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: #000000;
+    }
+
+    /* CSS for button styles */
+    .styled-button-me {
+      color: #181818;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 15px 20px;
+      height: 70px;
+      width: 600px;
+      margin-top: 5px;
+      text-align: center;
+      transition: background-color 0.3s;
+      font-size: 18px;
+    }
+
+    .yellow-button-me {
+      background-color: #ffc107;
+    }
+
+    .yellow-button-me:hover {
+      background-color: #866400;
+    }
+
+    .blue-button-me {
+      background-color: #007bff;
+    }
+
+    .blue-button-me:hover {
+      background-color: #00438a;
+    }
+
+    .red-button-me {
+      background-color: #dc3545;
+    }
+
+    .red-button-me:hover {
+      background-color: #9f2a35;
+    }
+
+    .green-button-me {
+      background-color: #28a745;
+    }
+
+    .green-button-me:hover {
+      background-color: #19722e;
+    }
+
+    .yellow-font {
+      color: #ffc107;
+    }
+
+    .blue-font {
+      color: #007bff;
+    }
+
+    .red-font {
+      color: #dc3545;
+    }
+
+    .green-font {
+      color: #28a745;
+    }
+  </style>
+  <title>Welcome to My Website</title>
 </head>
 <body>
-<div>
-  <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-    <h1 style="color: #333;">Welcome to My Spring Boot API</h1>
-    <p style="color: #666;">This is a simple welcome page for your Spring Boot API.</p>
-
-    <p style="color: #666;">Created by Vítor Pereira Resende</p>
-    <p style="color: #666;">This webapp simulates a workshop and was made using Java, Spring Boot framework, and PostgreSQL.</p>
-    <div class="button-container" style="display: flex; flex-direction: column; align-items: center;">
-      <div class="button-div" style="margin: 10px 0; width: 100%;">
-        <button class="styled-button yellow-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/users'" style="color: #fff; border: none; border-radius: 5px; cursor: pointer; padding: 15px 20px; width: 100%; text-align: center; transition: background-color 0.3s; font-size: 18px; background-color: #ffc107;">To view the Users API working</button>
-      </div>
-      <div class="button-div" style="margin: 10px 0; width: 100%;">
-        <button class="styled-button blue-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/orders'" style="color: #fff; border: none; border-radius: 5px; cursor: pointer; padding: 15px 20px; width: 100%; text-align: center; transition: background-color 0.3s; font-size: 18px; background-color: #007bff;">To view Orders API working</button>
-      </div>
-      <div class="button-div" style="margin: 10px 0; width: 100%;">
-        <button class="styled-button red-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/categories'" style="color: #fff; border: none; border-radius: 5px; cursor: pointer; padding: 15px 20px; width: 100%; text-align: center; transition: background-color 0.3s; font-size: 18px; background-color: #dc3545;">To view Categories API working</button>
-      </div>
-      <div class="button-div" style="margin: 10px 0; width: 100%;">
-        <button class="styled-button green-button" onclick="window.location.href='https://workshop-springboot3-app-befefc2b19cc.herokuapp.com/products'" style="color: #fff; border: none; border-radius: 5px; cursor: pointer; padding: 15px 20px; width: 100%; text-align: center; transition: background-color 0.3s; font-size: 18px; background-color: #28a745;">To view Products API working</button>
-      </div>
-    </div>
+<div class="page-container">
+  <h1 class="custom-heading">Welcome to my website API endpoint</h1>
+  <p>This is a web app built to test and learn about web development using Java Spring Boot, React.js, and PostgreSQL.</p>
+  <div class="content-home-container-me">
+    <p>This project simulates a workshop, where you can create users, orders, and products. There are some categories, which I only display the list of on the screen, without giving the user permission to edit, delete, or create new ones.</p>
+    <p>The users section shows the list of the users saved in the application, and it's possible to edit, delete, and create new ones. When a user is deleted, the orders associated with the user are deleted in cascade.</p>
+    <p>The orders section displays the list of orders. The orders are the most complex entity in the application, and besides creating, editing, and deleting orders, it's possible to add items to the order and pay it. Once paid, it's possible to change the order status. The orders have restrictions on exclusion, such as when a user with some orders is deleted, the orders are deleted in cascade too. When an order is deleted, the products that were in the order still exist; the only thing deleted together is the relation between products and the order, which has its table on the database.</p>
+    <p>The product section is where the products are shown as a list, and is where to create, edit, and delete the products. In the creation, beyond the name, description, and price of the product, it is necessary to pick the categories of it too, but it is not mandatory. In the editing, I didn't give permission to change the categories, only the name, description, and price. When a product is deleted, if it was in an order, the product is removed from the order.</p>
+    <p>The category section is where the application only displays the categories registered in the system. It's not possible to delete, edit, or create new ones. The categories aren't deleted when a product with this category is deleted.</p>
   </div>
-
+  <div class="link-container-me">
+    <p>If you want to check out the backend codes on GitHub:</p>
+    <a href="https://github.com/vitorpereira26r/workshop-springboot3-jpa" target="_blank" rel="noopener noreferrer" class="button-link">
+      <button class="styled-button-me blue-button-me">Go to Backend GitHub Repository</button>
+    </a>
+  </div>
+  <div class="link-container-me">
+    <p>If you want to check out the frontend codes on GitHub:</p>
+    <a href="https://github.com/vitorpereira26r/workshop-frontend" target="_blank" rel="noopener noreferrer" class="button-link">
+      <button class="styled-button-me red-button-me">Go to Frontend GitHub Repository</button>
+    </a>
+  </div>
+  <div class="link-container-me">
+    <p>If you want to check out my backend API endpoint, click on the button below:</p>
+    <a href="your-api-url-here" target="_blank" rel="noopener noreferrer" class="button-link">
+      <button class="styled-button-me yellow-button-me">Go to Backend API</button>
+    </a>
+  </div>
 </div>
 </body>
 </html>
