@@ -111,13 +111,20 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", moment=" + moment +
-                ", orderStatus=" + orderStatus +
-                ", client=" + client +
-                ", items=" + items +
-                ", payment=" + payment +
-                '}';
+        String aux = "Order{" +
+                    "id=" + id +
+                    ", moment=" + moment +
+                    ", orderStatus=" + orderStatus;
+/*
+        if(payment != null){
+            aux+=", payment="+payment;
+        }
+        if(client != null){
+            aux+=", client"+client;
+        }*/
+
+        aux+="}";
+
+        return aux;
     }
 }

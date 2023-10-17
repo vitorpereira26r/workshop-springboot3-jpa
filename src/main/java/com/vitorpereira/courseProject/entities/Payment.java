@@ -67,4 +67,19 @@ public class Payment implements Serializable {
     public int hashCode() {
         return Objects.hash(getId());
     }
+
+    @Override
+    public String toString() {
+        String aux = "Payment{";
+        aux+="id="+id;
+        aux+=", moment="+moment;
+
+        if(order != null){
+            aux+=", order="+order;
+        }
+
+        aux+="}";
+
+        return aux;
+    }
 }

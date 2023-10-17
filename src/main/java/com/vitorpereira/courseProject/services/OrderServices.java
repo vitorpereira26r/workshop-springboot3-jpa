@@ -1,22 +1,19 @@
 package com.vitorpereira.courseProject.services;
 
 import com.vitorpereira.courseProject.entities.Order;
-import com.vitorpereira.courseProject.entities.OrderItem;
 import com.vitorpereira.courseProject.entities.Payment;
-import com.vitorpereira.courseProject.entities.dtos.OrderItemDto;
 import com.vitorpereira.courseProject.entities.dtos.OrderStatusDto;
 import com.vitorpereira.courseProject.entities.enums.OrderStatus;
 import com.vitorpereira.courseProject.repositories.OrderItemRepository;
 import com.vitorpereira.courseProject.repositories.OrderRepository;
+import com.vitorpereira.courseProject.repositories.PaymentRepository;
 import com.vitorpereira.courseProject.services.excepitions.AlreadyPaid;
 import com.vitorpereira.courseProject.services.excepitions.DatabaseException;
 import com.vitorpereira.courseProject.services.excepitions.OrderStatusInvalid;
 import com.vitorpereira.courseProject.services.excepitions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -28,10 +25,13 @@ public class OrderServices {
 
     private OrderRepository repository;
 
+    private PaymentRepository paymentRepository;
+
     private OrderItemRepository orderItemRepository;
 
-    public OrderServices(OrderRepository repository, OrderItemRepository orderItemRepository){
+    public OrderServices(OrderRepository repository, OrderItemRepository orderItemRepository, PaymentRepository paymentRepository){
         this.repository = repository;
+        this.paymentRepository = paymentRepository;
         this.orderItemRepository = orderItemRepository;
     }
 
@@ -90,12 +90,20 @@ public class OrderServices {
     }
 
     public Order pay(Long id){
+        System.out.println("At the OrderServices.java - pay");
+        System.out.println("id: "+id);
         try{
             Order order = repository.getReferenceById(id);
+            System.out.println(order);
+            System.out.println(order.getOrderStatus().getCode());
             if(order.getOrderStatus().getCode()==1){
 
                 Payment payment = new Payment(null, Instant.now(), order);
-                order.setPayment(payment);
+                Payment entity = paymentRepository.save(payment);
+                System.out.println(entity);
+                order.setPayment(entity);
+
+                System.out.println(order);
 
                 Integer orderStatusCode = order.getOrderStatus().getCode()+1;
                 order.setOrderStatus(OrderStatus.valueOf(orderStatusCode));
