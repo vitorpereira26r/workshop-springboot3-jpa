@@ -26,10 +26,10 @@ public class Order implements Serializable {
     @JoinColumn(name="client_id")
     private User client;
 
-    @OneToMany(mappedBy = "id.order")
+    @OneToMany(mappedBy = "id.order", cascade = CascadeType.REMOVE)
     private Set<OrderItem> items = new HashSet<>();
 
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "order", cascade = CascadeType.REMOVE)
     private Payment payment;
 
     public Order() {

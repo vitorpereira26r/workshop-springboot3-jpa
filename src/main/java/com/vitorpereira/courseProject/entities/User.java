@@ -21,7 +21,7 @@ public class User implements Serializable {
     private String password;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE)
     private List<Order> orders = new ArrayList<>();
 
     public User() {
