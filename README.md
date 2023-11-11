@@ -1,7 +1,7 @@
 # Workshop backend
 
 ## Acessar backend
-https://workshop-springboot3-app-befefc2b19cc.herokuapp.com
+https://workshop-springboot3-jpa-postgresql.onrender.com/
 
 ## Acessar frontend
 https://vitor-pereira-workshop-spring-boot.com/
