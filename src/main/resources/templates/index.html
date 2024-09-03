@@ -15,9 +15,15 @@
       margin-top: 70px;
     }
 
+    p {
+      text-align: left;
+    }
+
     .custom-heading {
       margin-bottom: 5px;
-      color: #161617; /* Change this to your desired color */
+      color: #000000;
+      text-align: left;
+      font-size: 50px;
     }
 
     .page-content {
@@ -157,13 +163,13 @@
       color: #28a745;
     }
   </style>
-  <title>Welcome to My Website</title>
+  <title>Springboot API</title>
 </head>
 <body>
 <div class="page-container">
-  <h1 class="custom-heading">Welcome to my website API endpoint</h1>
-  <p>This is a web app built to test and learn about web development using Java Spring Boot, React.js, and PostgreSQL.</p>
+  <h1 class="custom-heading">Welcome to my Springboot API</h1>
   <div class="content-home-container-me">
+    <p>This is a web app built to test and learn about web development using Java Spring Boot, React.js, and PostgreSQL.</p>
     <p>This project simulates a workshop, where you can create users, orders, and products. There are some categories, which I only display the list of on the screen, without giving the user permission to edit, delete, or create new ones.</p>
     <p>The users section shows the list of the users saved in the application, and it's possible to edit, delete, and create new ones. When a user is deleted, the orders associated with the user are deleted in cascade.</p>
     <p>The orders section displays the list of orders. The orders are the most complex entity in the application, and besides creating, editing, and deleting orders, it's possible to add items to the order and pay it. Once paid, it's possible to change the order status. The orders have restrictions on exclusion, such as when a user with some orders is deleted, the orders are deleted in cascade too. When an order is deleted, the products that were in the order still exist; the only thing deleted together is the relation between products and the order, which has its table on the database.</p>
@@ -184,7 +190,7 @@
   </div>
   <div class="link-container-me">
     <p>If you want to check out my frontend application to manage this backend, click the link below:</p>
-    <a href="https://vitor-pereira-workshop-spring-boot.com/" target="_blank" rel="noopener noreferrer" class="button-link">
+    <a href="https://workshop-app.vitorpereiraresende/" target="_blank" rel="noopener noreferrer" class="button-link">
       <button class="styled-button-me yellow-button-me">Go to Frontend</button>
     </a>
   </div>
