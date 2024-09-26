@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: workshop_jpa_springboot
+    image: workshop-jpa-springboot
+    container_name: workshop-jpa-springboot-container
     ports:
       - "9000:8080"
