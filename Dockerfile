@@ -1,6 +1,7 @@
 # create the .jar file
 FROM eclipse-temurin:17-jdk-alpine as build
 WORKDIR /app
+RUN apk add --no-cache maven
 COPY pom.xml .
 RUN mvn dependency:go-offline
 COPY . .
